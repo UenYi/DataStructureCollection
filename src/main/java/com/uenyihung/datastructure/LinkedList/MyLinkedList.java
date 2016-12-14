@@ -32,6 +32,8 @@ public class MyLinkedList<T> {
         if (first == null) {
             first = node;
         } else if (last == null) {
+            first.setNext(node);
+            node.setPrevious(first);
             last = node;
         } else {
             node.setPrevious(last);
