@@ -27,8 +27,7 @@ public class MyLinkedList<T> {
      * @param element the element to add.
      */
     public void add(T element) {
-        LinkedListNode<T> node = new LinkedListNode();
-        node.setData(element);
+        LinkedListNode<T> node = new LinkedListNode(element);
 
         if (first == null) {
             first = node;
@@ -55,8 +54,7 @@ public class MyLinkedList<T> {
             throw new IndexOutOfBoundsException("Cannot insert at index: " + index);
         }
 
-        LinkedListNode<T> node = new LinkedListNode<>();
-        node.setData(element);
+        LinkedListNode<T> node = new LinkedListNode<>(element);
 
         LinkedListNode<T> prev = null;
         LinkedListNode<T> next = null;

@@ -15,10 +15,18 @@ public class LinkedListNode<T> {
     private LinkedListNode<T> next;
 
     /**
-     * Default constructor
+     * Default constructor that calls the overloaded one.
      */
-    public LinkedListNode() {
-        data = null;
+    public LinkedListNode(){
+        this(null);
+    }
+    
+    /**
+     * One parameter constructor.
+     */
+    public LinkedListNode(T data) {
+        super();
+        this.data = data;
         previous = null;
         next = null;
     }
