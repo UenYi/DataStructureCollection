@@ -34,10 +34,10 @@ public class MyLinkedList<T> {
         } else if (last == null) {
             last = node;
         } else {
-            node.setPrevious(last.getPrevious());
-            node.setNext(last);
-            last.getPrevious().setNext(node);
-            last.setPrevious(node);
+            node.setPrevious(last);
+            node.setNext(null);
+            last.setNext(node);
+            last = node;
         }
 
         size++;
@@ -78,12 +78,16 @@ public class MyLinkedList<T> {
 
         node.setPrevious(prev);
         node.setNext(next);
-        
+
         if (prev != null) {
             prev.setNext(node);
         }
-        
+
         next.setPrevious(node);
+
+        if (next.getNext() == null) {
+            last = next;
+        }
 
         size++;
     }
