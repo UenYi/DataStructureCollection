@@ -78,7 +78,11 @@ public class MyLinkedList<T> {
 
         node.setPrevious(prev);
         node.setNext(next);
-        prev.setNext(node);
+        
+        if (prev != null) {
+            prev.setNext(node);
+        }
+        
         next.setPrevious(node);
 
         size++;
@@ -132,7 +136,7 @@ public class MyLinkedList<T> {
             first = first.getNext();
         } else if (index == size - 1) {
             data = last.getData();
-            first.getPrevious().setNext(null);
+            last.getPrevious().setNext(null);
             last = last.getPrevious();
         } else {
             int position = 1;
@@ -141,7 +145,7 @@ public class MyLinkedList<T> {
             while (position < index) {
                 node = node.getNext();
             }
-            
+
             data = node.getData();
             node.getPrevious().setNext(node.getNext());
             node.getNext().setPrevious(node.getPrevious());
@@ -150,12 +154,13 @@ public class MyLinkedList<T> {
         size--;
         return data;
     }
-    
+
     /**
      * Retrieves the size of @this instance of LinkedList.
-     * @return 
+     *
+     * @return
      */
-    public int size(){
+    public int size() {
         return size;
     }
 }
