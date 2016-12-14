@@ -1,7 +1,7 @@
 package com.uenyihung.datastructure.LinkedList;
 
 /**
- * A generic LinkedList.
+ * A generic LinkedList of mine for practice.
  *
  * @author Uen Yi Cindy Hung
  * @since 12/13/2016
