@@ -37,8 +37,8 @@ public class MyLinkedList<T> {
         } else {
             node.setPrevious(last.getPrevious());
             node.setNext(last);
+            last.getPrevious().setNext(node);
             last.setPrevious(node);
-            first.setNext(node);
         }
 
         size++;
