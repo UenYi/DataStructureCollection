@@ -50,7 +50,7 @@ public class MyLinkedList<T> {
      * @param element
      */
     public void add(int index, T element) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Cannot insert at index: " + index);
         }
 
@@ -95,8 +95,8 @@ public class MyLinkedList<T> {
      * @return T the element value
      */
     public T get(int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Cannot insert at index: " + index);
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
         }
 
         if (index == 0) {
@@ -124,8 +124,8 @@ public class MyLinkedList<T> {
      * @return T the element value.
      */
     public T remove(int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Cannot insert at index: " + index);
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Cannot remove at index: " + index);
         }
 
         T data;
